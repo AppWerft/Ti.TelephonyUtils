@@ -11,8 +11,8 @@ license: Specify your license
 copyright: Copyright (c) 2017 by 
 
 # these should not be edited
-name: togglephoneloudspeaker
-moduleid: de.appwerft.togglephoneloudspeaker
+name: telephonyutils
+moduleid: de.appwerft.telephonyutils
 guid: 6a3b3245-a890-4927-8fb4-577786a31d05
 platform: android
 minsdk: 6.0.1.GA

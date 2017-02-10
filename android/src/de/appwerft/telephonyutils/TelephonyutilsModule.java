@@ -31,7 +31,7 @@ import android.os.RemoteException;
 import android.telephony.TelephonyManager;
 
 @Kroll.module(name = "Togglephoneloudspeaker", id = "de.appwerft.togglephoneloudspeaker")
-public class TogglephoneloudspeakerModule extends KrollModule {
+public class TelephonyutilsModule extends KrollModule {
 
 	// Standard Debugging variables
 	private static final String LCAT = "TogglephoneloudspeakerModule";
@@ -41,10 +41,7 @@ public class TogglephoneloudspeakerModule extends KrollModule {
 			Manifest.permission.CALL_PHONE,
 			Manifest.permission.READ_PHONE_STATE };
 
-	// You can define constants with @Kroll.constant, for example:
-	// @Kroll.constant public static final String EXTERNAL_NAME = value;
-
-	public TogglephoneloudspeakerModule() {
+	public TelephonyutilsModule() {
 		super();
 	}
 

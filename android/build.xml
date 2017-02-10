@@ -1,4 +1,4 @@
-<project name="togglephoneloudspeaker" default="dist">
+<project name="telephonyutils" default="dist">
 	<description>
 		Ant build script for Titanium Android module togglephoneloudspeaker
 	</description>
