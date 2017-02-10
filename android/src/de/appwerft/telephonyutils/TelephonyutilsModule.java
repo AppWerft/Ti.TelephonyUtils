@@ -13,9 +13,11 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 import org.appcelerator.kroll.KrollDict;
+import org.appcelerator.kroll.KrollFunction;
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.titanium.TiApplication;
+import org.appcelerator.titanium.TiBaseActivity;
 import org.appcelerator.kroll.common.Log;
 
 import com.android.internal.telephony.*;
@@ -27,6 +29,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.RemoteException;
 import android.telephony.TelephonyManager;
 
@@ -149,5 +152,35 @@ public class TelephonyutilsModule extends KrollModule {
 		Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"
 				+ number));
 		activity.startActivity(intent);
+	}
+
+	@Kroll.method
+	public void requestPermission(Object cb) {
+		KrollFunction permissionCallback;
+		if (cb instanceof KrollFunction) {
+			permissionCallback = (KrollFunction) cb;
+		} else {
+			return;
+		}
+		String perm = "android.permission.CALL";
+		Log.d(LCAT, "example called");
+		if (Build.VERSION.SDK_INT < 23) {
+			return;
+		}
+		Activity currentActivity = TiApplication.getInstance()
+				.getCurrentActivity();
+		ArrayList<String> filteredPermissions = new ArrayList<String>();
+		if (currentActivity.checkSelfPermission(perm) != PackageManager.PERMISSION_GRANTED) {
+			filteredPermissions.add(perm);
+		}
+		if (filteredPermissions.size() == 0) {
+			Log.w(LCAT, "Permission(s) already granted");
+			return;
+		}
+		int REQUEST_CODE = 123;
+		TiBaseActivity.registerPermissionRequestCallback(REQUEST_CODE,
+				permissionCallback, getKrollObject());
+		currentActivity.requestPermissions(filteredPermissions
+				.toArray(new String[filteredPermissions.size()]), REQUEST_CODE);
 	}
 }

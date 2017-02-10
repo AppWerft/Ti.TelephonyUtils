@@ -13,5 +13,6 @@
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Library/Application Support/Titanium/mobilesdk/osx/6.0.1.GA/android/android-support-v7-appcompat.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
