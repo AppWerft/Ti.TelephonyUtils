@@ -1,0 +1,4 @@
+"/Users/fuerst/Documents/APPC_WORKSPACE/Ti.TelephonyUtils/android/build/generated/java/de/appwerft/telephonyutils/TogglephoneloudspeakerBootstrap.java"
+"/Users/fuerst/Documents/APPC_WORKSPACE/Ti.TelephonyUtils/android/build/generated/java/de/appwerft/togglephoneloudspeaker/TogglephoneloudspeakerBootstrap.java"
+"/Users/fuerst/Documents/APPC_WORKSPACE/Ti.TelephonyUtils/android/src/com/android/internal/telephony/ITelephony.java"
+"/Users/fuerst/Documents/APPC_WORKSPACE/Ti.TelephonyUtils/android/src/de/appwerft/telephonyutils/TelephonyutilsModule.java"

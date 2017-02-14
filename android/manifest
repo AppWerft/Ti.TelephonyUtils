@@ -5,8 +5,8 @@
 version: 1.0.0
 apiversion: 3
 architectures: armeabi-v7a x86
-description: togglephoneloudspeaker
-author: Rainer Knöterich
+description: TelephonyUtils 
+author: Rainer Knoeterich
 license: Specify your license
 copyright: Copyright (c) 2017 by 
 

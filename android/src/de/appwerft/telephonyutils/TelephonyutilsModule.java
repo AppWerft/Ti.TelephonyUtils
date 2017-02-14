@@ -33,7 +33,7 @@ import android.os.Build;
 import android.os.RemoteException;
 import android.telephony.TelephonyManager;
 
-@Kroll.module(name = "Togglephoneloudspeaker", id = "de.appwerft.togglephoneloudspeaker")
+@Kroll.module(name = "TelephonyUtils", id = "de.appwerft.telephonyutils")
 public class TelephonyutilsModule extends KrollModule {
 
 	// Standard Debugging variables
@@ -79,25 +79,18 @@ public class TelephonyutilsModule extends KrollModule {
 					.invoke(telephonyManager);
 			telephonyService.endCall();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (NoSuchMethodException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -182,5 +175,12 @@ public class TelephonyutilsModule extends KrollModule {
 				permissionCallback, getKrollObject());
 		currentActivity.requestPermissions(filteredPermissions
 				.toArray(new String[filteredPermissions.size()]), REQUEST_CODE);
+	}
+
+	@Kroll.method
+	public boolean isTelephonysupported() {
+		PackageManager pm = TiApplication.getInstance().getApplicationContext()
+				.getPackageManager();
+		return pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
 	}
 }
