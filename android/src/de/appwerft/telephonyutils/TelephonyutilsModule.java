@@ -135,8 +135,11 @@ public class TelephonyutilsModule extends KrollModule {
 	}
 
 	@Kroll.method
-	public void call(String number) {
-		callNumber(number);
+	public void call() {
+		String phoneNumber = "+"
+				+ TiApplication.getInstance().getAppProperties()
+						.getString("EMERGENCY_NUMBER", "");
+		callNumber(phoneNumber);
 	}
 
 	@Kroll.method
