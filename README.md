@@ -1,8 +1,8 @@
-#Ti.TelephonyUtils
+# Ti.TelephonyUtils
 
 This is a Titanium module for handling some stuff with telephone.
 
-##Usage
+## Usage
 
 ```javascript
 var Tel = require("de.appwerft.telephonyutils");
@@ -30,7 +30,7 @@ require("lib/permissions").requestPermissions(["MODIFY_PHONE_STATE","CALL_PHONE"
 
 ```
 
-###Content of `permissions.js` is:
+### Content of `permissions.js` is:
 
 ```javascript
 exports.requestPermissions = function(_permissions, _callback) {
